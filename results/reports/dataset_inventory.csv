@@ -1,0 +1,12 @@
+file,rows,columns,size_mb
+data\account_ground_truth.parquet,1637,2,0.01
+data\accounts.parquet,1637,3,0.011
+data\campaign_ground_truth.csv,8,11,0.001
+data\cashout_features.parquet,94722,3,1.003
+data\flow_features.parquet,94722,8,3.096
+data\splits\test.parquet,21668,30,1.964
+data\splits\train.parquet,29148,30,2.625
+data\splits\validation.parquet,11217,30,1.016
+data\transaction_features.parquet,94722,26,7.857
+data\transaction_ground_truth.parquet,94722,4,0.548
+data\transactions.parquet,94722,8,1.97
