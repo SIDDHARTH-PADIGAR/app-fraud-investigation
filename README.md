@@ -1,10 +1,36 @@
 # APP Fraud Investigation Workbench
 
-**A reproducible, rule-based investigation system for detecting Authorised Push Payment (APP) fraud patterns and tracing mule-account networks.**
+**An explainable transaction-monitoring and investigation system for identifying APP fraud patterns and tracing mule-account networks.**
 
-This project simulates financial transaction activity, identifies suspicious victim-to-mule payments and mule-layering transfers, and groups alerts into connected account investigations.
+## TL;DR
 
-It focuses on explainable detection, point-in-time feature engineering, temporal evaluation, and evidence-led investigation rather than treating fraud detection as a black-box classification problem.
+APP fraud involves victims being manipulated into transferring money to accounts controlled by fraudsters. Those funds can then move through multiple mule accounts before being cashed out, making the transaction trail harder to investigate.
+
+This project simulates that activity and builds a system to identify suspicious victim-to-mule payments, detect rapid fund transfers between mule accounts, and connect related accounts into investigation cases.
+
+**What we found on the untouched synthetic test set:**
+
+- Analysed **21,668 transactions**, including 56 fraud-stage transactions.
+- Detected **17 fraud-stage transactions** with **zero false positives** in this test sample.
+- Achieved **100% precision**, **30.36% recall**, and an **F1 score of 0.4658**.
+- Detected 10 of 11 mule-layering transactions.
+- Detected 7 of 39 victim-to-mule transactions.
+- Identified cashout sequences as a major gap in the current detection approach.
+
+**The key finding:** Historical fund-flow behaviour helped identify mule-layering activity. However, detecting the initial victim payments and subsequent cashout activity requires stronger sequence-level investigation.
+
+## Key Results
+
+| Metric | Result |
+|---|---:|
+| Transactions evaluated | 21,668 |
+| Fraud-stage transactions | 56 |
+| True positives | 17 |
+| False positives | 0 |
+| False negatives | 39 |
+| Precision | 100% |
+| Recall | 30.36% |
+| F1 score | 0.4658 |
 
 ---
 
